@@ -1,17 +1,13 @@
-import { EntityRepository, Repository } from 'typeorm';
+import { DataSource, EntityRepository, Repository } from 'typeorm';
 import { Pessoa } from './pessoa.entity';
 
 @EntityRepository(Pessoa)
 export class PessoaRepository extends Repository<Pessoa> {
-  buscarTodos(): Promise<Pessoa[]> {
-    return this.createQueryBuilder('p').getMany();
+  constructor(dataSource: DataSource) {
+    super(Pessoa, dataSource.createEntityManager());
   }
 
-  buscarPorNome(nome: string): Promise<Pessoa> {
-    return this.createQueryBuilder('p')
-      .where('nome = :nome', {
-        nome,
-      })
-      .getOne();
+  buscarTodos(): Promise<Pessoa[]> {
+    return this.createQueryBuilder('pessoa').getMany();
   }
 }

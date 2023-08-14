@@ -10,7 +10,7 @@ import { AuthGuard } from 'src/guards/auth.guard';
 export class PessoaController {
   constructor(private readonly pessoaService: PessoaService) {}
 
-  @Get('/')
+  @Get()
   buscarTodos(): Promise<Pessoa[]> {
     return this.pessoaService.buscarTodos();
   }
