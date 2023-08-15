@@ -42,7 +42,7 @@ export class EstruturaCartao1691763768181 implements MigrationInterface {
           {
             name: 'deleted_at',
             type: 'timestamp',
-            default: 'now()',
+            isNullable: true,
           },
         ],
       }),
@@ -83,7 +83,7 @@ export class EstruturaCartao1691763768181 implements MigrationInterface {
           {
             name: 'deleted_at',
             type: 'timestamp',
-            default: 'now()',
+            isNullable: true,
           },
         ],
       }),
@@ -107,7 +107,7 @@ export class EstruturaCartao1691763768181 implements MigrationInterface {
           },
           {
             name: 'limite',
-            type: 'numeric(10,2)',
+            type: 'bigint',
             isNullable: false,
           },
           {
@@ -154,7 +154,7 @@ export class EstruturaCartao1691763768181 implements MigrationInterface {
           {
             name: 'deleted_at',
             type: 'timestamp',
-            default: 'now()',
+            isNullable: true,
           },
         ],
       }),

@@ -57,7 +57,7 @@ export class EstruturaSubcategoria1691783331223 implements MigrationInterface {
           {
             name: 'deleted_at',
             type: 'timestamp',
-            default: 'now()',
+            isNullable: true,
           },
         ],
       }),

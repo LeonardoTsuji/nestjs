@@ -10,4 +10,20 @@ export class CartaoRepository extends Repository<Cartao> {
   buscarTodos(): Promise<Cartao[]> {
     return this.createQueryBuilder('cartao').getMany();
   }
+
+  async salvar(cartao: Cartao): Promise<Cartao> {
+    const newCartao = await this.create(cartao);
+
+    await this.save(newCartao);
+
+    return newCartao;
+  }
+
+  buscarPorId(id: number): Promise<Cartao> {
+    return this.createQueryBuilder('cartao')
+      .where('cartao.id = :id', {
+        id,
+      })
+      .getOne();
+  }
 }

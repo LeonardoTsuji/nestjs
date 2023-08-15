@@ -11,6 +11,6 @@ import { SubcategoriaModule } from './subcategoria/subcategoria.module';
   imports: [TypeOrmModule.forFeature([Categoria]), SubcategoriaModule],
   controllers: [CategoriaController],
   providers: [CategoriaService, CategoriaRepository],
-  exports: [CategoriaService, SubcategoriaModule],
+  exports: [CategoriaService, SubcategoriaModule, CategoriaRepository],
 })
 export class CategoriaModule {}

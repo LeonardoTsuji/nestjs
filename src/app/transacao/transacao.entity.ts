@@ -16,7 +16,7 @@ export class Transacao {
   @Column({
     name: 'data',
   })
-  data: number;
+  data: Date;
 
   @Column({
     name: 'valor',

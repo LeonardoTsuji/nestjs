@@ -1,9 +1,9 @@
-import { Logger, Module } from '@nestjs/common';
-import { LimparLogJob } from './limparLog/limparLog.job';
+import { Module } from '@nestjs/common';
+import { CriaFaturaModule } from './criaFatura/criaFatura.module';
+import { LimparLogModule } from './limparLog/limparLog.module';
 
 @Module({
-  imports: [],
-  providers: [LimparLogJob, Logger],
-  exports: [LimparLogJob],
+  imports: [CriaFaturaModule],
+  exports: [CriaFaturaModule],
 })
 export class JobsModule {}

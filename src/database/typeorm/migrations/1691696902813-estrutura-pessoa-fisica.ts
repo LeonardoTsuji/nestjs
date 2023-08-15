@@ -46,7 +46,7 @@ export class EstruturaPessoaFisica1691696902813 implements MigrationInterface {
           {
             name: 'deleted_at',
             type: 'timestamp',
-            default: 'now()',
+            isNullable: true,
           },
         ],
       }),

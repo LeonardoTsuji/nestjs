@@ -12,8 +12,9 @@ import { CartaoModule } from './app/cartao/cartao.module';
 import { ContaModule } from './app/conta/conta.module';
 import { UsuarioModule } from './app/usuario/usuario.module';
 import { FaturaModule } from './app/fatura/fatura.module';
-import { TransacaoModule } from './app/transacao/fatura.module';
+import { TransacaoModule } from './app/transacao/transacao.module';
 import { CategoriaModule } from './app/categoria/categoria.module';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { CategoriaModule } from './app/categoria/categoria.module';
       useFactory: async (configService: ConfigService) =>
         configService.get('typeorm'),
     }),
+    ScheduleModule.forRoot(),
     PessoaModule,
     PessoaFisicaModule,
     UsuarioModule,

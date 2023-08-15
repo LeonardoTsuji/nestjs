@@ -47,7 +47,7 @@ export class EstruturaTelefone1691697712905 implements MigrationInterface {
           {
             name: 'deleted_at',
             type: 'timestamp',
-            default: 'now()',
+            isNullable: true,
           },
         ],
       }),

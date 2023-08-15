@@ -10,6 +10,6 @@ import { CartaoCategoriaRepository } from './cartaoCategoria.repository';
   imports: [TypeOrmModule.forFeature([CartaoCategoria])],
   controllers: [CartaoCategoriaController],
   providers: [CartaoCategoriaService, CartaoCategoriaRepository],
-  exports: [CartaoCategoriaService],
+  exports: [CartaoCategoriaService, CartaoCategoriaRepository],
 })
 export class CartaoCategoriaModule {}

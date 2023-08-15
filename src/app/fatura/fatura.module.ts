@@ -10,6 +10,6 @@ import { FaturaRepository } from './fatura.repository';
   imports: [TypeOrmModule.forFeature([Fatura])],
   controllers: [FaturaController],
   providers: [FaturaService, FaturaRepository],
-  exports: [FaturaService],
+  exports: [FaturaService, FaturaRepository],
 })
 export class FaturaModule {}

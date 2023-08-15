@@ -92,7 +92,7 @@ export class EstruturaTransacao1691855934935 implements MigrationInterface {
           {
             name: 'deleted_at',
             type: 'timestamp',
-            default: 'now()',
+            isNullable: true,
           },
         ],
       }),

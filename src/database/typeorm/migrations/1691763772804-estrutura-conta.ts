@@ -42,7 +42,7 @@ export class EstruturaConta1691763772804 implements MigrationInterface {
           {
             name: 'deleted_at',
             type: 'timestamp',
-            default: 'now()',
+            isNullable: true,
           },
         ],
       }),
@@ -83,7 +83,7 @@ export class EstruturaConta1691763772804 implements MigrationInterface {
           {
             name: 'deleted_at',
             type: 'timestamp',
-            default: 'now()',
+            isNullable: true,
           },
         ],
       }),
@@ -139,7 +139,7 @@ export class EstruturaConta1691763772804 implements MigrationInterface {
           {
             name: 'deleted_at',
             type: 'timestamp',
-            default: 'now()',
+            isNullable: true,
           },
         ],
       }),

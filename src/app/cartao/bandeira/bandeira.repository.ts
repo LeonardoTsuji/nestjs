@@ -10,4 +10,12 @@ export class BandeiraRepository extends Repository<Bandeira> {
   buscarTodos(): Promise<Bandeira[]> {
     return this.createQueryBuilder('bandeira').getMany();
   }
+
+  buscarPorCodigo(codigo: string): Promise<Bandeira> {
+    return this.createQueryBuilder('carteira')
+      .where('carteira.codigo = :codigo', {
+        codigo,
+      })
+      .getOne();
+  }
 }

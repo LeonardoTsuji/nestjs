@@ -41,7 +41,7 @@ export class EstruturaUsuarioPessoa1691697735785 implements MigrationInterface {
           {
             name: 'deleted_at',
             type: 'timestamp',
-            default: 'now()',
+            isNullable: true,
           },
         ],
       }),

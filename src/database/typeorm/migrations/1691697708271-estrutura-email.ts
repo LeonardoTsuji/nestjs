@@ -47,7 +47,7 @@ export class EstruturaEmail1691697708271 implements MigrationInterface {
           {
             name: 'deleted_at',
             type: 'timestamp',
-            default: 'now()',
+            isNullable: true,
           },
         ],
       }),

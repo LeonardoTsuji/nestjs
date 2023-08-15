@@ -24,6 +24,7 @@ import { Pessoa } from './pessoa.entity';
     EmailModule,
     TelefoneModule,
     PessoaFisicaModule,
+    PessoaRepository,
   ],
 })
 export class PessoaModule {}

@@ -10,4 +10,12 @@ export class TransacaoRepository extends Repository<Transacao> {
   buscarTodos(): Promise<Transacao[]> {
     return this.createQueryBuilder('transacao').getMany();
   }
+
+  async salvar(transacao: Transacao): Promise<Transacao> {
+    const newTransacao = await this.create(transacao);
+
+    await this.save(newTransacao);
+
+    return newTransacao;
+  }
 }

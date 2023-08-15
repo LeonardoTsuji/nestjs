@@ -7,7 +7,7 @@ export class Usuario {
   id: number;
 
   @Column()
-  nome: string;
+  login: string;
 
   @Column({
     name: 'created_at',

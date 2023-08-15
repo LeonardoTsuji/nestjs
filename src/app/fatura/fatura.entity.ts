@@ -17,17 +17,17 @@ export class Fatura {
   @Column({
     name: 'data',
   })
-  data: number;
+  data: Date;
 
   @Column({
     name: 'data_fechamento',
   })
-  dataFechamento: number;
+  dataFechamento: Date;
 
   @Column({
     name: 'data_abertura',
   })
-  dataAbertura: number;
+  dataAbertura: Date;
 
   @Column({
     name: 'valor',

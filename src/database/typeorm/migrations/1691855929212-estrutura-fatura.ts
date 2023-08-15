@@ -2,6 +2,7 @@ import {
   MigrationInterface,
   QueryRunner,
   Table,
+  TableCheck,
   TableForeignKey,
 } from 'typeorm';
 
@@ -20,17 +21,17 @@ export class EstruturaFatura1691855929212 implements MigrationInterface {
           },
           {
             name: 'data',
-            type: 'timestamp',
+            type: 'date',
             isNullable: false,
           },
           {
             name: 'data_fechamento',
-            type: 'timestamp',
+            type: 'date',
             isNullable: false,
           },
           {
             name: 'data_abertura',
-            type: 'timestamp',
+            type: 'date',
             isNullable: false,
           },
           {
@@ -81,10 +82,18 @@ export class EstruturaFatura1691855929212 implements MigrationInterface {
         referencedTableName: 'cartao',
       }),
     );
+
+    await queryRunner.query(
+      `ALTER TABLE "fatura" ADD CONSTRAINT "UQ_data_cartao_id" UNIQUE ("data", "cartao_id")`,
+    );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropForeignKey('fatura', 'fatura_cartao');
+    await queryRunner.query(
+      `ALTER TABLE "fatura" DROP CONSTRAINT "UQ_data_cartao_id"`,
+    );
+
     await queryRunner.dropTable('fatura');
   }
 }

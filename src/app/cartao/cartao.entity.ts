@@ -5,6 +5,7 @@ import {
   ManyToOne,
   OneToMany,
   PrimaryColumn,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Pessoa } from '../pessoa/pessoa.entity';
 import { CartaoCategoria } from './cartaoCategoria/cartaoCategoria.entity';
@@ -14,7 +15,7 @@ import { Transacao } from '../transacao/transacao.entity';
 
 @Entity()
 export class Cartao {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column({
@@ -24,9 +25,6 @@ export class Cartao {
 
   @Column({
     name: 'limite',
-    type: 'decimal',
-    precision: 10,
-    scale: 2,
   })
   limite: number;
 
@@ -84,10 +82,10 @@ export class Cartao {
   @OneToMany(() => Fatura, (fatura) => fatura.cartao, {
     cascade: true,
   })
-  faturas: Fatura[];
+  faturas?: Fatura[];
 
   @OneToMany(() => Transacao, (transacao) => transacao.cartao, {
     cascade: true,
   })
-  transacoes: Transacao[];
+  transacoes?: Transacao[];
 }

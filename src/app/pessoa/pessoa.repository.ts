@@ -10,4 +10,12 @@ export class PessoaRepository extends Repository<Pessoa> {
   buscarTodos(): Promise<Pessoa[]> {
     return this.createQueryBuilder('pessoa').getMany();
   }
+
+  buscarPorId(id: number): Promise<Pessoa> {
+    return this.createQueryBuilder('pessoa')
+      .where('pessoa.id = :id', {
+        id,
+      })
+      .getOne();
+  }
 }

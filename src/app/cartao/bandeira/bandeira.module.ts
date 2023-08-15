@@ -10,6 +10,6 @@ import { BandeiraRepository } from './bandeira.repository';
   imports: [TypeOrmModule.forFeature([Bandeira])],
   controllers: [BandeiraController],
   providers: [BandeiraService, BandeiraRepository],
-  exports: [BandeiraService],
+  exports: [BandeiraService, BandeiraRepository],
 })
 export class BandeiraModule {}
