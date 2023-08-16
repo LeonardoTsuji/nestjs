@@ -18,4 +18,28 @@ export class CategoriaRepository extends Repository<Categoria> {
       })
       .getOne();
   }
+
+  buscarPorId(id: number): Promise<Categoria> {
+    return this.createQueryBuilder('categoria')
+      .where('categoria.id = :id', {
+        id,
+      })
+      .getOne();
+  }
+
+  async salvar(categoria: Categoria): Promise<Categoria> {
+    const newCategoria = await this.create(categoria);
+
+    await this.save(newCategoria);
+
+    return newCategoria;
+  }
+
+  async atualizar(categoria: Categoria): Promise<Categoria> {
+    return this.save(categoria);
+  }
+
+  async excluir(categoria: Categoria): Promise<void> {
+    await this.softRemove(categoria);
+  }
 }

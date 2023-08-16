@@ -10,4 +10,12 @@ export class ContaCategoriaRepository extends Repository<ContaCategoria> {
   buscarTodos(): Promise<ContaCategoria[]> {
     return this.createQueryBuilder('contaCategoria').getMany();
   }
+
+  buscarPorCodigo(codigo: string): Promise<ContaCategoria> {
+    return this.createQueryBuilder('contaCategoria')
+      .where('contaCategoria.codigo = :codigo', {
+        codigo,
+      })
+      .getOne();
+  }
 }

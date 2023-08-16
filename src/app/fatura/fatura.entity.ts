@@ -1,10 +1,12 @@
 import {
   Column,
+  CreateDateColumn,
   Entity,
   JoinColumn,
   ManyToOne,
   OneToMany,
   PrimaryColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 import { Cartao } from '../cartao/cartao.entity';
 import { Transacao } from '../transacao/transacao.entity';
@@ -49,12 +51,12 @@ export class Fatura {
   })
   saldoAnterior: number;
 
-  @Column({
+  @CreateDateColumn({
     name: 'created_at',
   })
   createdAt: Date;
 
-  @Column({
+  @UpdateDateColumn({
     name: 'updated_at',
   })
   updatedAt: Date;

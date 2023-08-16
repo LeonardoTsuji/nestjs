@@ -26,4 +26,21 @@ export class CartaoRepository extends Repository<Cartao> {
       })
       .getOne();
   }
+
+  buscarPorIdEPessoaId(id: number, pessoaId: number): Promise<Cartao> {
+    return this.createQueryBuilder('cartao')
+      .where('cartao.id = :id', { id })
+      .andWhere('cartao.pessoa = :pessoaId', {
+        pessoaId,
+      })
+      .getOne();
+  }
+
+  async atualizar(cartao: Cartao): Promise<Cartao> {
+    return this.save(cartao);
+  }
+
+  async excluir(cartao: Cartao): Promise<void> {
+    await this.softRemove(cartao);
+  }
 }

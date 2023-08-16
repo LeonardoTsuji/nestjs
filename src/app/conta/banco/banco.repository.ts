@@ -10,4 +10,12 @@ export class BancoRepository extends Repository<Banco> {
   buscarTodos(): Promise<Banco[]> {
     return this.createQueryBuilder('banco').getMany();
   }
+
+  buscarPorCodigo(codigo: string): Promise<Banco> {
+    return this.createQueryBuilder('banco')
+      .where('banco.codigo = :codigo', {
+        codigo,
+      })
+      .getOne();
+  }
 }

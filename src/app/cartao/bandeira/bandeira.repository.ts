@@ -12,8 +12,8 @@ export class BandeiraRepository extends Repository<Bandeira> {
   }
 
   buscarPorCodigo(codigo: string): Promise<Bandeira> {
-    return this.createQueryBuilder('carteira')
-      .where('carteira.codigo = :codigo', {
+    return this.createQueryBuilder('bandeira')
+      .where('bandeira.codigo = :codigo', {
         codigo,
       })
       .getOne();

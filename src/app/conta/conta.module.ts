@@ -7,12 +7,14 @@ import { BancoModule } from './banco/banco.module';
 import { ContaCategoriaModule } from './contaCategoria/contaCategoria.module';
 import { Conta } from './conta.entity';
 import { ContaRepository } from './conta.repository';
+import { PessoaModule } from '../pessoa/pessoa.module';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([Conta]),
     BancoModule,
     ContaCategoriaModule,
+    PessoaModule,
   ],
   controllers: [ContaController],
   providers: [ContaService, ContaRepository],

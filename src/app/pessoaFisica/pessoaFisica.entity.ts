@@ -1,4 +1,13 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { Pessoa } from '../pessoa/pessoa.entity';
 
 @Entity()
@@ -9,17 +18,17 @@ export class PessoaFisica {
   @Column()
   nome: string;
 
-  @Column({
+  @CreateDateColumn({
     name: 'created_at',
   })
   createdAt: Date;
 
-  @Column({
+  @UpdateDateColumn({
     name: 'updated_at',
   })
   updatedAt: Date;
 
-  @Column({
+  @DeleteDateColumn({
     name: 'deleted_at',
   })
   deletedAt: Date;

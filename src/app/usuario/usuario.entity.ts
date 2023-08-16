@@ -1,4 +1,12 @@
-import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { UsuarioPessoa } from '../usuarioPessoa/usuarioPessoa.entity';
 
 @Entity()
@@ -9,17 +17,17 @@ export class Usuario {
   @Column()
   login: string;
 
-  @Column({
+  @CreateDateColumn({
     name: 'created_at',
   })
   createdAt: Date;
 
-  @Column({
+  @UpdateDateColumn({
     name: 'updated_at',
   })
   updatedAt: Date;
 
-  @Column({
+  @DeleteDateColumn({
     name: 'deleted_at',
   })
   deletedAt: Date;

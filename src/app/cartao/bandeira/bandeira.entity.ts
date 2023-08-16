@@ -1,10 +1,13 @@
 import {
   Column,
+  CreateDateColumn,
+  DeleteDateColumn,
   Entity,
   JoinColumn,
   OneToMany,
   OneToOne,
   PrimaryColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 import { Cartao } from '../cartao.entity';
 
@@ -23,17 +26,17 @@ export class Bandeira {
   })
   descricao: string;
 
-  @Column({
+  @CreateDateColumn({
     name: 'created_at',
   })
   createdAt: Date;
 
-  @Column({
+  @UpdateDateColumn({
     name: 'updated_at',
   })
   updatedAt: Date;
 
-  @Column({
+  @DeleteDateColumn({
     name: 'deleted_at',
   })
   deletedAt: Date;

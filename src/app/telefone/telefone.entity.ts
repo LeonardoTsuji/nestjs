@@ -1,4 +1,13 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { Pessoa } from '../pessoa/pessoa.entity';
 
 @Entity()
@@ -14,17 +23,17 @@ export class Telefone {
   @Column({ name: 'ativo', default: true })
   ativo: boolean;
 
-  @Column({
+  @CreateDateColumn({
     name: 'created_at',
   })
   createdAt: Date;
 
-  @Column({
+  @UpdateDateColumn({
     name: 'updated_at',
   })
   updatedAt: Date;
 
-  @Column({
+  @DeleteDateColumn({
     name: 'deleted_at',
   })
   deletedAt: Date;

@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty, IsNumber } from 'class-validator';
 
 export default class SalvarCartaoDTO {
   @ApiProperty()
@@ -8,14 +8,32 @@ export default class SalvarCartaoDTO {
 
   @ApiProperty()
   @IsNotEmpty({ message: 'limite é obrigatória' })
+  @IsNumber(
+    {},
+    {
+      message: 'limite deve ser um número',
+    },
+  )
   limite: number;
 
   @ApiProperty()
   @IsNotEmpty({ message: 'dataFechamento é obrigatória' })
+  @IsNumber(
+    {},
+    {
+      message: 'dataFechamento deve ser um número',
+    },
+  )
   dataFechamento: number;
 
   @ApiProperty()
   @IsNotEmpty({ message: 'dataVencimento é obrigatória' })
+  @IsNumber(
+    {},
+    {
+      message: 'dataVencimento deve ser um número',
+    },
+  )
   dataVencimento: number;
 
   @ApiProperty()

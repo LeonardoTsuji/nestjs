@@ -10,6 +10,6 @@ import { ContaCategoriaRepository } from './contaCategoria.repository';
   imports: [TypeOrmModule.forFeature([ContaCategoria])],
   controllers: [ContaCategoriaController],
   providers: [ContaCategoriaService, ContaCategoriaRepository],
-  exports: [ContaCategoriaService],
+  exports: [ContaCategoriaService, ContaCategoriaRepository],
 })
 export class ContaCategoriaModule {}

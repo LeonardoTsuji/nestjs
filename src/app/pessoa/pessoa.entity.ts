@@ -1,4 +1,13 @@
-import { Column, Entity, OneToMany, OneToOne, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  OneToMany,
+  OneToOne,
+  PrimaryColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { PessoaFisica } from '../pessoaFisica/pessoaFisica.entity';
 import { Email } from '../email/email.entity';
 import { Telefone } from '../telefone/telefone.entity';
@@ -10,17 +19,17 @@ export class Pessoa {
   @PrimaryColumn()
   id: number;
 
-  @Column({
+  @CreateDateColumn({
     name: 'created_at',
   })
   createdAt: Date;
 
-  @Column({
+  @UpdateDateColumn({
     name: 'updated_at',
   })
   updatedAt: Date;
 
-  @Column({
+  @DeleteDateColumn({
     name: 'deleted_at',
   })
   deletedAt: Date;

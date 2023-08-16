@@ -1,4 +1,12 @@
-import { Column, Entity, JoinColumn, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  JoinColumn,
+  PrimaryColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { Usuario } from '../usuario/usuario.entity';
 import { Pessoa } from '../pessoa/pessoa.entity';
 
@@ -7,17 +15,17 @@ export class UsuarioPessoa {
   @PrimaryColumn()
   id: number;
 
-  @Column({
+  @CreateDateColumn({
     name: 'created_at',
   })
   createdAt: Date;
 
-  @Column({
+  @UpdateDateColumn({
     name: 'updated_at',
   })
   updatedAt: Date;
 
-  @Column({
+  @DeleteDateColumn({
     name: 'deleted_at',
   })
   deletedAt: Date;

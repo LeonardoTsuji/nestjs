@@ -10,6 +10,6 @@ import { BancoRepository } from './banco.repository';
   imports: [TypeOrmModule.forFeature([Banco])],
   controllers: [BancoController],
   providers: [BancoService, BancoRepository],
-  exports: [BancoService],
+  exports: [BancoService, BancoRepository],
 })
 export class BancoModule {}

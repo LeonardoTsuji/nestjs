@@ -1,4 +1,12 @@
-import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { Subcategoria } from './subcategoria/subcategoria.entity';
 import { Transacao } from '../transacao/transacao.entity';
 
@@ -17,23 +25,33 @@ export class Categoria {
   })
   descricao: string;
 
+  @Column({
+    name: 'tipo',
+  })
+  tipo: string;
+
+  @Column({
+    name: 'cor',
+  })
+  cor: string;
+
   @Column({ name: 'essencial', default: true })
   essencial: boolean;
 
   @Column({ name: 'ativo', default: true })
   ativo: boolean;
 
-  @Column({
+  @CreateDateColumn({
     name: 'created_at',
   })
   createdAt: Date;
 
-  @Column({
+  @UpdateDateColumn({
     name: 'updated_at',
   })
   updatedAt: Date;
 
-  @Column({
+  @DeleteDateColumn({
     name: 'deleted_at',
   })
   deletedAt: Date;
