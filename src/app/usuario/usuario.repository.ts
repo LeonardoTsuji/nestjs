@@ -1,5 +1,6 @@
 import { DataSource, EntityRepository, Repository } from 'typeorm';
 import { Usuario } from './usuario.entity';
+import { BuscarUsuarioDTO } from './dtos/BuscarUsuario.dto';
 
 @EntityRepository(Usuario)
 export class UsuarioRepository extends Repository<Usuario> {
@@ -7,8 +8,13 @@ export class UsuarioRepository extends Repository<Usuario> {
     super(Usuario, dataSource.createEntityManager());
   }
 
-  buscarTodos(): Promise<Usuario[]> {
-    return this.createQueryBuilder('usuario').getMany();
+  buscarTodos(params: BuscarUsuarioDTO): Promise<Usuario[]> {
+    const query = this.createQueryBuilder('usuario').where('1 = 1');
+
+    if (params?.login)
+      query.andWhere('usuario.login = :login', { login: params.login });
+
+    return query.getMany();
   }
 
   buscarPorNome(nome: string): Promise<Usuario> {

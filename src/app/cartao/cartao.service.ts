@@ -8,6 +8,7 @@ import { PessoaRepository } from '../pessoa/pessoa.repository';
 import { Bandeira } from './bandeira/bandeira.entity';
 import { CartaoCategoria } from './cartaoCategoria/cartaoCategoria.entity';
 import AtualizarCartaoDTO from './dtos/AtualizarCartao.dto';
+import { converterEmCentavos } from 'src/utils/util';
 
 @Injectable()
 export class CartaoService {
@@ -59,7 +60,7 @@ export class CartaoService {
     newCartao.dataFechamento = body.dataFechamento;
     newCartao.dataVencimento = body.dataVencimento;
     newCartao.descricao = body.descricao;
-    newCartao.limite = body.limite * 100;
+    newCartao.limite = converterEmCentavos(body.limite);
 
     return this.cartaoRepository.salvar(newCartao);
   }
@@ -95,7 +96,7 @@ export class CartaoService {
     cartao.cartaoCategoria = cartaoCategoria || cartao.cartaoCategoria;
     cartao.pessoa = pessoa;
     cartao.descricao = body.descricao || cartao.descricao;
-    cartao.limite = body.limite * 100 || cartao.limite;
+    cartao.limite = converterEmCentavos(body.limite) || cartao.limite;
     cartao.dataFechamento = body.dataFechamento || cartao.dataFechamento;
     cartao.dataVencimento = body.dataVencimento || cartao.dataVencimento;
 

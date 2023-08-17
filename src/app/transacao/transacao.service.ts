@@ -5,6 +5,7 @@ import SalvarTransacaoDto from './dtos/SalvarTransacao.dto';
 import { CartaoRepository } from '../cartao/cartao.repository';
 import { CategoriaRepository } from '../categoria/categoria.repository';
 import { FaturaRepository } from '../fatura/fatura.repository';
+import { converterEmCentavos } from 'src/utils/util';
 
 @Injectable()
 export class TransacaoService {

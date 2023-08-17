@@ -2,13 +2,14 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { Usuario } from './usuario.entity';
 import { UsuarioRepository } from './usuario.repository';
 import SalvarUsuarioDTO from './dtos/SalvarUsuario.dto';
+import { BuscarUsuarioDTO } from './dtos/BuscarUsuario.dto';
 
 @Injectable()
 export class UsuarioService {
   constructor(private readonly usuarioRepository: UsuarioRepository) {}
 
-  buscarTodos(): Promise<Usuario[]> {
-    return this.usuarioRepository.buscarTodos();
+  buscarTodos(query: BuscarUsuarioDTO): Promise<Usuario[]> {
+    return this.usuarioRepository.buscarTodos(query);
   }
 
   async salvar(body: SalvarUsuarioDTO): Promise<void> {
