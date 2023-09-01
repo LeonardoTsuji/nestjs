@@ -5,18 +5,28 @@ import {
   Entity,
   JoinColumn,
   OneToOne,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { Pessoa } from '../pessoa/pessoa.entity';
 
 @Entity()
 export class PessoaFisica {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn({ name: 'id' })
   id: number;
 
-  @Column()
+  @Column({
+    name: 'nome',
+  })
   nome: string;
+
+  @Column({
+    name: 'cpf',
+  })
+  cpf: string;
+
+  @Column({ name: 'pessoa_id' })
+  pessoaId: number;
 
   @CreateDateColumn({
     name: 'created_at',

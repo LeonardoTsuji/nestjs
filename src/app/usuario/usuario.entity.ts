@@ -4,18 +4,30 @@ import {
   DeleteDateColumn,
   Entity,
   OneToMany,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { UsuarioPessoa } from '../usuarioPessoa/usuarioPessoa.entity';
 
 @Entity()
 export class Usuario {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn({ name: 'id' })
   id: number;
 
-  @Column()
+  @Column({
+    name: 'login',
+  })
   login: string;
+
+  @Column({
+    name: 'ativo',
+  })
+  ativo: boolean;
+
+  @Column({
+    name: 'id_externo',
+  })
+  idExterno: string;
 
   @CreateDateColumn({
     name: 'created_at',

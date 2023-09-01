@@ -6,6 +6,7 @@ import {
   Post,
   Put,
   Delete,
+  Request,
   UseGuards,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
@@ -22,8 +23,8 @@ export class CartaoController {
   constructor(private readonly cartaoService: CartaoService) {}
 
   @Get()
-  buscarTodos(): Promise<Cartao[]> {
-    return this.cartaoService.buscarTodos();
+  buscarTodos(@Request() request: Request): Promise<Cartao[]> {
+    return this.cartaoService.buscarPorUsuarioId(request['usuarioId']);
   }
 
   @Get(':id')

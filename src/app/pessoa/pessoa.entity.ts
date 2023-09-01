@@ -5,7 +5,7 @@ import {
   Entity,
   OneToMany,
   OneToOne,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { PessoaFisica } from '../pessoaFisica/pessoaFisica.entity';
@@ -16,7 +16,7 @@ import { Cartao } from '../cartao/cartao.entity';
 
 @Entity()
 export class Pessoa {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn({ name: 'id' })
   id: number;
 
   @CreateDateColumn({

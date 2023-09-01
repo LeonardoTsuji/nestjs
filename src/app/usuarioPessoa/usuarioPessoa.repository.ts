@@ -10,4 +10,18 @@ export class UsuarioPessoaRepository extends Repository<UsuarioPessoa> {
   buscarTodos(): Promise<UsuarioPessoa[]> {
     return this.createQueryBuilder('usuarioPessoa').getMany();
   }
+
+  buscarPorUsuarioId(usuarioId: number): Promise<UsuarioPessoa[]> {
+    return this.createQueryBuilder('usuarioPessoa')
+      .where('usuarioPessoa.usuarioId = :usuarioId', {
+        usuarioId,
+      })
+      .getMany();
+  }
+
+  async salvar(usuarioPessoa: UsuarioPessoa): Promise<UsuarioPessoa> {
+    const newUsuarioPessoa = await this.create(usuarioPessoa);
+
+    return await this.save(newUsuarioPessoa);
+  }
 }

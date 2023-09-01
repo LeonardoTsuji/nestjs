@@ -14,6 +14,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '626491',
           essencial: false,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'ROUPAS',
@@ -21,6 +22,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'ff8258',
           essencial: false,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'DIVIDAS_E_EMPRESTIMOS',
@@ -28,6 +30,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'ff6c6c',
           essencial: true,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'INVESTIMENTOS',
@@ -35,6 +38,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '24B38A',
           essencial: false,
           tipo: 'RECEITA',
+          ativo: true,
         },
         {
           codigo: 'EDUCACAO',
@@ -42,6 +46,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '6470ba',
           essencial: true,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'LAZER_E_HOBBIES',
@@ -49,6 +54,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'b8e64c',
           essencial: false,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'FAMILIA_E_FILHOS',
@@ -56,6 +62,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'a6e88b',
           essencial: false,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'ALIMENTACAO',
@@ -63,6 +70,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'e274a8',
           essencial: true,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'PRESENTES_E_DOACOES',
@@ -70,6 +78,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '6b6fff',
           essencial: false,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'MERCADO',
@@ -77,6 +86,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'ff8a72',
           essencial: true,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'SAUDE',
@@ -84,6 +94,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '72b4ff',
           essencial: true,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'CASA',
@@ -91,6 +102,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '8193ff',
           essencial: true,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'INVESTIMENTOS',
@@ -98,6 +110,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'ff70a1',
           essencial: false,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'PAGAMENTO_DE_FATURA',
@@ -105,6 +118,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'b3b3b3',
           essencial: false,
           tipo: 'none',
+          ativo: true,
         },
         {
           codigo: 'EMPRESTIMOS',
@@ -112,6 +126,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '27C498',
           essencial: false,
           tipo: 'RECEITA',
+          ativo: true,
         },
         {
           codigo: 'OUTROS',
@@ -119,6 +134,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'b3b3b3',
           essencial: false,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'OUTRAS_RECEITAS',
@@ -126,6 +142,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '2BDCA9',
           essencial: false,
           tipo: 'RECEITA',
+          ativo: true,
         },
         {
           codigo: 'CUIDADOS_sPESSOAIS',
@@ -133,6 +150,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'ff676d',
           essencial: true,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'PETS',
@@ -140,6 +158,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'ffbe57',
           essencial: false,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'SALARIO',
@@ -147,6 +166,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '2EE8B3',
           essencial: false,
           tipo: 'RECEITA',
+          ativo: true,
         },
         {
           codigo: 'COMPRAS',
@@ -154,6 +174,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'f67cff',
           essencial: false,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'ASSINATURAS_E_SERVICOS',
@@ -161,6 +182,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'c671e4',
           essencial: false,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'IMPOSTOS_E_TAXAS',
@@ -168,6 +190,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'ff977c',
           essencial: true,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'TRANSFERENCIAS',
@@ -175,6 +198,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'b3b3b3',
           essencial: false,
           tipo: 'none',
+          ativo: true,
         },
         {
           codigo: 'TRANSPORTE',
@@ -182,6 +206,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '51bcff',
           essencial: true,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'VIAGEM',
@@ -189,6 +214,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: 'ff6b6b',
           essencial: false,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'TRABALHO',
@@ -196,6 +222,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '446ff5',
           essencial: true,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'FUTEBOL',
@@ -203,6 +230,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '86bb5d',
           essencial: false,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'RENDIMENTOS',
@@ -210,6 +238,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '94cd7a',
           essencial: false,
           tipo: 'RECEITA',
+          ativo: true,
         },
         {
           codigo: 'FERIAS',
@@ -217,6 +246,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '86bb5d',
           essencial: false,
           tipo: 'RECEITA',
+          ativo: true,
         },
         {
           codigo: 'VENDAS',
@@ -224,6 +254,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '86bb5d',
           essencial: false,
           tipo: 'RECEITA',
+          ativo: true,
         },
         {
           codigo: 'COMPRAS',
@@ -231,6 +262,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '8193ff',
           essencial: true,
           tipo: 'DESPESA',
+          ativo: true,
         },
         {
           codigo: 'PRESENTE',
@@ -238,6 +270,7 @@ export class SeedCategoria1692189540580 implements MigrationInterface {
           cor: '86bb5d',
           essencial: false,
           tipo: 'RECEITA',
+          ativo: true,
         },
       ])
       .execute();

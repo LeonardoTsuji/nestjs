@@ -6,14 +6,14 @@ import {
   JoinColumn,
   OneToMany,
   OneToOne,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { Cartao } from '../cartao.entity';
 
 @Entity()
 export class Bandeira {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn({ name: 'id' })
   id: number;
 
   @Column({

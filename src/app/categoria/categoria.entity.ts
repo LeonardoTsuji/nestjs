@@ -4,7 +4,7 @@ import {
   DeleteDateColumn,
   Entity,
   OneToMany,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { Subcategoria } from './subcategoria/subcategoria.entity';
@@ -12,7 +12,7 @@ import { Transacao } from '../transacao/transacao.entity';
 
 @Entity()
 export class Categoria {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn({ name: 'id' })
   id: number;
 
   @Column({

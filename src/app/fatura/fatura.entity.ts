@@ -5,7 +5,7 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { Cartao } from '../cartao/cartao.entity';
@@ -13,7 +13,7 @@ import { Transacao } from '../transacao/transacao.entity';
 
 @Entity()
 export class Fatura {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn({ name: 'id' })
   id: number;
 
   @Column({

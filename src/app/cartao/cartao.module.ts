@@ -8,6 +8,7 @@ import { CartaoCategoriaModule } from './cartaoCategoria/cartaoCategoria.module'
 import { Cartao } from './cartao.entity';
 import { CartaoRepository } from './cartao.repository';
 import { PessoaModule } from '../pessoa/pessoa.module';
+import { UsuarioPessoaModule } from '../usuarioPessoa/usuarioPessoa.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { PessoaModule } from '../pessoa/pessoa.module';
     BandeiraModule,
     CartaoCategoriaModule,
     PessoaModule,
+    UsuarioPessoaModule,
   ],
   controllers: [CartaoController],
   providers: [CartaoService, CartaoRepository],

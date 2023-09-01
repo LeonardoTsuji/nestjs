@@ -14,8 +14,6 @@ export class TransacaoRepository extends Repository<Transacao> {
   async salvar(transacao: Transacao): Promise<Transacao> {
     const newTransacao = await this.create(transacao);
 
-    await this.save(newTransacao);
-
-    return newTransacao;
+    return await this.save(newTransacao);
   }
 }

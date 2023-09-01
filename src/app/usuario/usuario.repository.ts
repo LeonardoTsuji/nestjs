@@ -24,4 +24,10 @@ export class UsuarioRepository extends Repository<Usuario> {
       })
       .getOne();
   }
+
+  async salvar(usuario: Usuario): Promise<Usuario> {
+    const newUsuario = await this.create(usuario);
+
+    return await this.save(newUsuario);
+  }
 }

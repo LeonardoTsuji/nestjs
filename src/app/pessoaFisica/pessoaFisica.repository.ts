@@ -18,4 +18,10 @@ export class PessoaFisicaRepository extends Repository<PessoaFisica> {
       })
       .getOne();
   }
+
+  async salvar(pessoaFisica: PessoaFisica): Promise<PessoaFisica> {
+    const newPessoaFisica = await this.create(pessoaFisica);
+
+    return await this.save(newPessoaFisica);
+  }
 }

@@ -10,6 +10,6 @@ import { PessoaFisicaRepository } from './pessoaFisica.repository';
   imports: [TypeOrmModule.forFeature([PessoaFisica])],
   controllers: [PessoaFisicaController],
   providers: [PessoaFisicaService, PessoaFisicaRepository],
-  exports: [PessoaFisicaService],
+  exports: [PessoaFisicaService, PessoaFisicaRepository],
 })
 export class PessoaFisicaModule {}

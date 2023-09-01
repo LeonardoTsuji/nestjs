@@ -14,9 +14,7 @@ export class FaturaRepository extends Repository<Fatura> {
   async salvar(fatura: Fatura): Promise<Fatura> {
     const newFatura = await this.create(fatura);
 
-    await this.save(newFatura);
-
-    return newFatura;
+    return await this.save(newFatura);
   }
 
   buscarPorCartaoIdEMesEAno(

@@ -5,7 +5,7 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { Pessoa } from '../pessoa/pessoa.entity';
@@ -14,7 +14,7 @@ import { ContaCategoria } from './contaCategoria/contaCategoria.entity';
 
 @Entity()
 export class Conta {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn({ name: 'id' })
   id: number;
 
   @Column({

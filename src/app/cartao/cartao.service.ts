@@ -9,6 +9,7 @@ import { Bandeira } from './bandeira/bandeira.entity';
 import { CartaoCategoria } from './cartaoCategoria/cartaoCategoria.entity';
 import AtualizarCartaoDTO from './dtos/AtualizarCartao.dto';
 import { converterEmCentavos } from 'src/utils/util';
+import { UsuarioPessoaRepository } from '../usuarioPessoa/usuarioPessoa.repository';
 
 @Injectable()
 export class CartaoService {
@@ -19,10 +20,17 @@ export class CartaoService {
     private readonly bandeiraRepository: BandeiraRepository,
     private readonly cartaoCategoriaRepository: CartaoCategoriaRepository,
     private readonly pessoaRepository: PessoaRepository,
+    private readonly usuarioPessoaRepository: UsuarioPessoaRepository,
   ) {}
 
   buscarTodos(): Promise<Cartao[]> {
     return this.cartaoRepository.buscarTodos();
+  }
+  async buscarPorUsuarioId(usuarioId: number): Promise<Cartao[]> {
+    const usuario = await this.usuarioPessoaRepository.buscarPorUsuarioId(
+      usuarioId,
+    );
+    return this.cartaoRepository.buscarPorPessoaId(usuario[0].pessoaId);
   }
 
   async buscarPorIdEPessoaId(id: number): Promise<Cartao> {

@@ -30,9 +30,7 @@ export class CategoriaRepository extends Repository<Categoria> {
   async salvar(categoria: Categoria): Promise<Categoria> {
     const newCategoria = await this.create(categoria);
 
-    await this.save(newCategoria);
-
-    return newCategoria;
+    return await this.save(newCategoria);
   }
 
   async atualizar(categoria: Categoria): Promise<Categoria> {

@@ -18,4 +18,10 @@ export class PessoaRepository extends Repository<Pessoa> {
       })
       .getOne();
   }
+
+  async salvar(pessoa: Pessoa): Promise<Pessoa> {
+    const newPessoa = await this.create(pessoa);
+
+    return await this.save(newPessoa);
+  }
 }

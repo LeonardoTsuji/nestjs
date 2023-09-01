@@ -14,9 +14,7 @@ export class ContaRepository extends Repository<Conta> {
   async salvar(conta: Conta): Promise<Conta> {
     const newConta = await this.create(conta);
 
-    await this.save(newConta);
-
-    return newConta;
+    return await this.save(newConta);
   }
 
   buscarPorIdEPessoaId(id: number, pessoaId: number): Promise<Conta> {

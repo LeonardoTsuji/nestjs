@@ -11,12 +11,19 @@ export class CartaoRepository extends Repository<Cartao> {
     return this.createQueryBuilder('cartao').getMany();
   }
 
+  buscarPorPessoaId(pessoaId: number): Promise<Cartao[]> {
+    return this.createQueryBuilder('cartao')
+      .leftJoin('cartao.pessoa', 'pessoa')
+      .where('pessoa.id = :id', {
+        id: pessoaId,
+      })
+      .getMany();
+  }
+
   async salvar(cartao: Cartao): Promise<Cartao> {
     const newCartao = await this.create(cartao);
 
-    await this.save(newCartao);
-
-    return newCartao;
+    return await this.save(newCartao);
   }
 
   buscarPorId(id: number): Promise<Cartao> {

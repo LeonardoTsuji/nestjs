@@ -4,7 +4,7 @@ import {
   DeleteDateColumn,
   Entity,
   JoinColumn,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { Usuario } from '../usuario/usuario.entity';
@@ -12,8 +12,18 @@ import { Pessoa } from '../pessoa/pessoa.entity';
 
 @Entity()
 export class UsuarioPessoa {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn({ name: 'id' })
   id: number;
+
+  @Column({
+    name: 'usuario_id',
+  })
+  usuarioId: number;
+
+  @Column({
+    name: 'pessoa_id',
+  })
+  pessoaId: number;
 
   @CreateDateColumn({
     name: 'created_at',

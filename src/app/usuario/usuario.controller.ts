@@ -1,13 +1,11 @@
-import { Body, Controller, Get, Post, Query, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import { Usuario } from './usuario.entity';
 import { ApiTags } from '@nestjs/swagger';
-import { AuthGuard } from 'src/guards/auth.guard';
 import SalvarUsuarioDTO from './dtos/SalvarUsuario.dto';
 import { BuscarUsuarioDTO } from './dtos/BuscarUsuario.dto';
 
 @Controller('/usuario')
-@UseGuards(AuthGuard)
 @ApiTags('Usuario')
 export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) {}
